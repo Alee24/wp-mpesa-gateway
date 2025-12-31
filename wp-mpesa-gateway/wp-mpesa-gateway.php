@@ -33,6 +33,10 @@ class WP_Mpesa_Gateway {
 		require_once WP_MPESA_GATEWAY_PATH . 'includes/class-mpesa-gateway-api.php';
 		require_once WP_MPESA_GATEWAY_PATH . 'admin/class-mpesa-gateway-admin.php';
 		require_once WP_MPESA_GATEWAY_PATH . 'public/class-mpesa-gateway-public.php';
+        require_once WP_MPESA_GATEWAY_PATH . 'includes/class-mpesa-gateway-pos.php';
+        
+        $pos = new WP_Mpesa_Gateway_POS();
+        $pos->init();
 	}
 
 	private function define_admin_hooks() {
