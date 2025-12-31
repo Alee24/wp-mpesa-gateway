@@ -1,3 +1,4 @@
+<?php
 /**
  * Plugin Name: WP Mpesa Gateway
  * Plugin URI:  https://kkdes.co.ke/wp-mpesa-gateway/
