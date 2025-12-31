@@ -1,0 +1,84 @@
+/* Public Form Styles */
+.mpesa-gateway-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.mpesa-pay-card {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mpesa-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.mpesa-logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.mpesa-input-group {
+    margin-bottom: 20px;
+}
+
+.mpesa-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.mpesa-input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.mpesa-input-group input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.mpesa-btn {
+    width: 100%;
+    padding: 14px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.mpesa-btn:hover {
+    background: #45a049;
+}
+
+.mpesa-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Response Messages */
+.mpesa-message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+.mpesa-message.success { color: #28a745; }
+.mpesa-message.error { color: #dc3545; }

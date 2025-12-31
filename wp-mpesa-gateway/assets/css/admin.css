@@ -1,0 +1,67 @@
+/* Admin Dashboard */
+.mpesa-stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.mpesa-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 200px;
+    border-left: 5px solid #ddd;
+}
+
+.stat-card.revenue {
+    border-left-color: #28a745;
+}
+
+.stat-card.success {
+    border-left-color: #17a2b8;
+}
+
+.stat-card.failed {
+    border-left-color: #dc3545;
+}
+
+.stat-card h3 {
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.stat-card .number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.mpesa-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.mpesa-badge.completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.mpesa-badge.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.mpesa-badge.failed {
+    background: #f8d7da;
+    color: #721c24;
+}
