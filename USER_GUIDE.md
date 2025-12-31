@@ -109,4 +109,4 @@ Track all your payments directly in WordPress.
 ---
 
 **Support**
-For customized support, contact **KKDynamic ENterprise solutions**.
+For customized support, contact **KK Dynamic Enterprise Solutions Ltd**.

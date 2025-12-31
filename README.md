@@ -73,4 +73,4 @@ This project is licensed under the MIT License.
 
 ## 👤 Author
 
-**KKDynamic ENterprise solutions**
+**KK Dynamic Enterprise Solutions Ltd**

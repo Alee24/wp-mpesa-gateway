@@ -1,10 +1,9 @@
-<?php
 /**
  * Plugin Name: WP Mpesa Gateway
  * Plugin URI:  https://kkdes.co.ke/wp-mpesa-gateway/
  * Description: A complete, professional M-Pesa STK Push payment solution for WordPress.
- * Version:     1.0.0
- * Author:      KKDynamic ENterprise solutions
+ * Version:     1.0.1
+ * Author:      KK Dynamic Enterprise Solutions Ltd
  * Text Domain: wp-mpesa-gateway
  */
 
@@ -13,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define Constants
-define( 'WP_MPESA_GATEWAY_VERSION', '1.0.0' );
+define( 'WP_MPESA_GATEWAY_VERSION', '1.0.1' );
 define( 'WP_MPESA_GATEWAY_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WP_MPESA_GATEWAY_URL', plugin_dir_url( __FILE__ ) );
 
