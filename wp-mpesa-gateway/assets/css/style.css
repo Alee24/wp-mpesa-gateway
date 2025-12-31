@@ -1,84 +1,344 @@
-/* Public Form Styles */
-.mpesa-gateway-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-    font-family: 'Segoe UI', sans-serif;
+:root {
+    --mpesa-green: #4CAF50;
+    --mpesa-dark-green: #388E3C;
+    --text-dark: #2c3e50;
+    --text-light: #95a5a6;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --radius: 12px;
+    --font-heading: 'Poppins', 'Segoe UI', sans-serif;
+    --font-body: 'Inter', 'Segoe UI', sans-serif;
 }
 
-.mpesa-pay-card {
-    background: #fff;
-    width: 100%;
-    max-width: 400px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+body {
+    background-color: var(--bg-light);
+    /* So white cards pop */
 }
 
-.mpesa-header {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.mpesa-logo {
-    height: 40px;
-    margin-bottom: 10px;
-}
-
-.mpesa-input-group {
-    margin-bottom: 20px;
-}
-
-.mpesa-input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #444;
-}
-
-.mpesa-input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-.mpesa-input-group input:focus {
-    border-color: #4CAF50;
-    outline: none;
-}
+/* --- Global Components --- */
 
 .mpesa-btn {
-    width: 100%;
-    padding: 14px;
-    background: #4CAF50;
-    color: white;
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--mpesa-green), var(--mpesa-dark-green));
+    color: var(--white);
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 50px;
+    /* Pill shape */
+    font-family: var(--font-body);
     font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    text-align: center;
 }
 
 .mpesa-btn:hover {
-    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(135deg, #43a047, #2e7d32);
 }
 
-.mpesa-footer {
-    text-align: center;
-    margin-top: 20px;
+.mpesa-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Shop Page & Filtering --- */
+
+.mpesa-shop-page {
+    max-width: 1280px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: var(--font-body);
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.mpesa-cart-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-dark);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mpesa-cart-link:hover {
+    box-shadow: var(--shadow-md);
+    color: var(--mpesa-green);
+}
+
+/* --- Product Grid --- */
+
+.mpesa-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.mpesa-product-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.mpesa-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.mpesa-product-card .product-image {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.mpesa-product-card .product-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mpesa-product-card .product-details {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mpesa-product-card .product-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.mpesa-product-card .product-title a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.mpesa-product-card .product-title a:hover {
+    color: var(--mpesa-green);
+}
+
+.mpesa-product-card .product-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    /* Push to bottom */
+    padding-top: 15px;
+}
+
+.mpesa-product-card .product-price {
+    color: var(--mpesa-green);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.mpesa-product-card .add-to-cart {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+/* Badges */
+.mpesa-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
     font-size: 12px;
-    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
-/* Response Messages */
-.mpesa-message {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
+/* --- Single Product Layout --- */
+
+.mpesa-single-product {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: var(--font-body);
 }
-.mpesa-message.success { color: #28a745; }
-.mpesa-message.error { color: #dc3545; }
+
+.mpesa-product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+    .mpesa-product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+    }
+}
+
+.product-gallery {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.product-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.product-gallery:hover img {
+    transform: scale(1.05);
+    /* Gentle zoom */
+}
+
+.product-summary .product-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.product-summary .product-price {
+    font-size: 2rem;
+    color: var(--mpesa-green);
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #eee;
+}
+
+.product-description {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+.cart-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.cart-actions input[type="number"] {
+    width: 80px;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.cart-actions input[type="number"]:focus {
+    border-color: var(--mpesa-green);
+    outline: none;
+}
+
+.mpesa-btn.add-to-cart-single {
+    padding: 14px 40px;
+    font-size: 1.1rem;
+}
+
+.product-meta {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* --- Cart & Checkout Pages --- */
+
+.mpesa-cart-wrapper,
+.mpesa-checkout-wrapper {
+    background: var(--white);
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-body);
+}
+
+.mpesa-cart-table {
+    width: 100%;
+    margin-bottom: 30px;
+    border-spacing: 0;
+}
+
+.mpesa-cart-table th {
+    text-align: left;
+    padding: 15px;
+    background: #f9f9f9;
+    color: var(--text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.mpesa-cart-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.mpesa-cart-table td:first-child {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}

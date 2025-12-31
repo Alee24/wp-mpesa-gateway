@@ -1,0 +1,201 @@
+/* --- Checkout Page --- */
+
+.mpesa-checkout-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 40px auto;
+    font-family: var(--font-body);
+}
+
+@media (max-width: 768px) {
+    .mpesa-checkout-container {
+        flex-direction: column-reverse;
+        /* Summary on top on mobile? No, commonly bottom, but secure form high up. Let's keep normal flow or reverse. */
+        gap: 20px;
+    }
+}
+
+.mpesa-checkout-details {
+    flex: 2;
+}
+
+.mpesa-checkout-summary {
+    flex: 1;
+}
+
+.mpesa-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #f0f0f0;
+}
+
+.mpesa-card-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.mpesa-card-header h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mpesa-card-header p {
+    color: var(--text-light);
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.mpesa-form-row {
+    margin-bottom: 20px;
+}
+
+.mpesa-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .dashicons {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    font-size: 20px;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    /* Space for icon */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #fdfdfd;
+}
+
+.input-with-icon input:focus {
+    border-color: var(--mpesa-green);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    outline: none;
+    background: #fff;
+}
+
+.mpesa-input-group small {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* Payment Method Card */
+.mpesa-payment-method {
+    margin: 30px 0;
+}
+
+.method-card {
+    border: 2px solid var(--mpesa-green);
+    background: rgba(76, 175, 80, 0.05);
+    /* Very light green tint */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.method-card img {
+    height: 30px;
+    width: auto;
+}
+
+.method-card span {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.method-card .dashicons-saved {
+    margin-left: auto;
+    color: var(--mpesa-green);
+    font-size: 24px;
+}
+
+/* Pay Button */
+.mpesa-btn-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    padding: 16px;
+}
+
+.mpesa-secure-badge {
+    text-align: center;
+    margin-top: 15px;
+    color: #888;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Summary Card */
+.summary-card {
+    background: #fcfcfc;
+}
+
+.summary-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    border-bottom: 2px dashed #eee;
+    padding-bottom: 20px;
+}
+
+.summary-items li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.summary-items li .item-name small {
+    color: #999;
+    margin-left: 5px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 10px;
+}
+
+.mpesa-empty-cart {
+    text-align: center;
+    padding: 60px;
+}

@@ -3,44 +3,11 @@
 class WP_Mpesa_Gateway_POS {
 
     public function init() {
-        add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'add_meta_boxes', array( $this, 'add_product_meta_boxes' ) );
         add_action( 'save_post', array( $this, 'save_product_meta' ) );
         add_action( 'admin_menu', array( $this, 'add_pos_menu' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_pos_assets' ) );
         add_action( 'wp_ajax_mpesa_pos_checkout', array( $this, 'process_pos_checkout' ) );
-    }
-
-    public function register_post_types() {
-        // Product CPT
-        register_post_type( 'mpesa_product', array(
-            'labels' => array(
-                'name' => 'POS Products',
-                'singular_name' => 'POS Product',
-                'add_new' => 'Add New Product',
-                'add_new_item' => 'Add New POS Product',
-                'edit_item' => 'Edit POS Product',
-            ),
-            'public' => true,
-            'show_in_menu' => false, // We will add a custom menu
-            'supports' => array( 'title', 'editor', 'thumbnail' ),
-            'menu_icon' => 'dashicons-cart',
-        ));
-
-        // Order CPT
-        register_post_type( 'mpesa_order', array(
-            'labels' => array(
-                'name' => 'POS Orders',
-                'singular_name' => 'POS Order',
-            ),
-            'public' => false,
-            'show_ui' => true,
-            'show_in_menu' => false, // We will add a custom menu
-            'supports' => array( 'title' ),
-            'menu_icon' => 'dashicons-clipboard',
-            'capabilities' => array( 'create_posts' => false ), // Orders are created programmatically
-            'map_meta_cap' => true,
-        ));
     }
 
     // --- Meta Boxes for Product ---
